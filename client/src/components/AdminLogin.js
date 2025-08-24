@@ -1,42 +1,93 @@
-import React, { Component } from 'react';
-import { Link, Navigate } from 'react-router-dom';
-import './admin.css'
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./admin.css";
 
-class AdminLogin extends Component {
+const AdminLogin = ({ handleSubmit, log_in }) => {
+  const navigate = useNavigate();
 
-    render() {
+  // Redirect if already logged in
+  if (log_in) {
+    navigate("/admin");
+  }
 
-        const { handleSubmit, log_in } = this.props;
-        
-        if (log_in){
-            return < Navigate to = '/admin'/>
-        } 
-        return (
-            <div className='flex justify-center mt-5'>
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+    email: "",
+  });
 
-                <form onSubmit={handleSubmit} className='flex flex-col w-[500px] p-3 rounded-md shadow-md items-center'>
-                    <h1 className='font-bold text-2xl mb-4'>Admin Login</h1>
+  const onChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-                    <div className='items-center mb-1'>
-                        <label className='font-semibold mr-2'>Username</label>
-                        <input type='username' name='username' className='px-2 border-2 border-gray-150' />
-                    </div>
-                    <div className='items-center mb-1'>
-                        <label className='font-semibold mr-3'>Password</label>
-                        <input type='password' name='password' className='px-2 border-2 border-gray-150' />
-                    </div>        
-                    <div className='items-center mb-1'>
-                        <label className='font-semibold mr-3'>Email</label>
-                        <input type='email' name='email' className='px-2 border-2 border-gray-150' />
-                    </div>     
+  const onSubmit = (e) => {
+    e.preventDefault();
+    handleSubmit(formData);
+  };
 
-                    <button type='submit' className='bg-green-500 text-white hover:shadow-md p-1 mb-3 hover:font-bold w-[280px]'>Login</button>
-                    <Link to='/' className='bg-red-500 text-white hover:shadow-md p-1 mb-3 hover:font-bold w-[280px] flex justify-center'>Cancel</Link>
-                </form>
+  return (
+    <div className="max-w-2xl mx-auto py-16 px-4 text-center">
+      <div className="bg-white rounded-xl shadow-lg p-8">
+        <i className="fas fa-user-shield text-primary text-4xl mb-4"></i>
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Admin Login</h2>
+        <p className="text-gray-600 mb-6">
+          Please enter your credentials to access the admin dashboard.
+        </p>
 
-            </div>
-        );
-    }
-}
+        <form onSubmit={onSubmit} className="flex flex-col space-y-4">
+          <div className="flex flex-col text-left">
+            <label className="font-semibold mb-1">Username</label>
+            <input
+              type="text"
+              name="username"
+              value={formData.username}
+              onChange={onChange}
+              className="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
+            />
+          </div>
+
+          <div className="flex flex-col text-left">
+            <label className="font-semibold mb-1">Password</label>
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={onChange}
+              className="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
+            />
+          </div>
+
+          <div className="flex flex-col text-left">
+            <label className="font-semibold mb-1">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={onChange}
+              className="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors duration-300"
+          >
+            Login
+          </button>
+
+          <Link
+            to="/"
+            className="bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition-colors duration-300 flex justify-center"
+          >
+            Cancel
+          </Link>
+        </form>
+      </div>
+    </div>
+  );
+};
 
 export default AdminLogin;
