@@ -23,13 +23,13 @@ function Navigation() {
             Home
           </Link>
           <Link to="/doctor_login" className="nav-link hover:text-blue-500">
-            Doctor Login
+            For Therapists
           </Link>
           <Link to="/patient_login" className="nav-link hover:text-blue-500">
-            Patient Login
+            For Patient
           </Link>
           <Link to="/admin_login" className="nav-link hover:text-blue-500">
-            Admin Login
+            For Admin
           </Link>
           <Link to="/about" className="nav-link hover:text-blue-500">
             About

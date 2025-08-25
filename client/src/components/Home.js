@@ -11,9 +11,9 @@ class Home extends Component {
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 <div class="text-center lg:text-left">
                                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                                        Your Journey to 
-                                        <span class="text-primary">Mental Wellness</span>
-                                        Starts Here
+                                        Our solution to <br/>
+                                        creating Mental Wellness<br/>
+                                        in Africa
                                     </h1>
                                     <p class="text-xl text-gray-600 mb-8 leading-relaxed">
                                         Connect with licensed therapists through secure, convenient online sessions. Take the first step towards better mental health with personalized care that fits your life.

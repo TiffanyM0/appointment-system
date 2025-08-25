@@ -16,7 +16,7 @@ class DoctorLogin extends Component {
                     <i className="fas fa-user-md text-green-500 text-4xl mb-4"></i>
 
                     {/* Heading */}
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">Doctor Login</h2>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">For Therapists</h2>
                     <p className="text-gray-600 mb-6">Log in to manage your appointments and patients.</p>
 
                     {/* Login Form */}
