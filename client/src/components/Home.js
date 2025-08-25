@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Home extends Component {
+    
     render() {
         return (
             <div className="flex flex-col ">
                     {/* <!-- Hero Section --> */}
-                    <div class="bg-gradient-to-br from-blue-50 to-green-50 h-screen flex items-center py-16 px-4 sm:px-6 lg:px-8">
+                    <div class="bg-gradient-to-br from-green-100 to-green-300 h-screen flex items-center py-16 px-4 sm:px-6 lg:px-8">
                         <div class="max-w-7xl mx-auto">
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 <div class="text-center lg:text-left">
@@ -19,12 +20,12 @@ class Home extends Component {
                                         Connect with licensed therapists through secure, convenient online sessions. Take the first step towards better mental health with personalized care that fits your life.
                                     </p>
                                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                                        <button class="nav-link bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transform hover:scale-105 transition-all duration-300 shadow-lg" data-page="booking">
+                                        <Link to={"/bookappointments"} class="nav-link bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transform hover:scale-105 transition-all duration-300 shadow-lg" data-page="booking">
                                             Book Your Session
-                                        </button>
-                                        <button class="nav-link bg-blue-600 text-white border-2 border-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 hover:text-white transform hover:scale-105 transition-all duration-300" data-page="prediagnosis">
+                                        </Link>
+                                        <Link to={"/prediagnosis"} class="nav-link bg-blue-600 text-white border-2 border-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 hover:text-white transform hover:scale-105 transition-all duration-300" data-page="prediagnosis">
                                             Start Assessment
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
 

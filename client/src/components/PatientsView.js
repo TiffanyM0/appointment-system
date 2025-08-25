@@ -59,7 +59,7 @@ function PatientsView() {
                     {user?.name ? user.name.split(" ").map(n => n[0]).join("") : "U"}
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">{user?.name || "Loading..."}</h3>
+                    <h3 className="font-semibold text-gray-900">{user?.name || "Tiffany"}</h3>
                     <p className="text-sm text-gray-600">Patient</p>
                   </div>
                 </div>

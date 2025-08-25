@@ -21,6 +21,7 @@ import Appointments from './components/AdminApppoint'
 import './App.css'
 import UserProvider from './components/UserProvider';
 import { useUser } from './components/UserProvider';
+import PreDiagnosis from './components/Prediagnosis';
 
 // Create a separate component that uses the context INSIDE UserProvider
 function AppContent() {
@@ -90,6 +91,7 @@ function AppContent() {
           />}>
         </Route>
         <Route path='register_patient' element={<RegisterPatient user={user} />}></Route>
+        <Route path="prediagnosis" element={<PreDiagnosis user={user} />}></Route>
         <Route path="/doctor_view" element={<DoctorView user={user} />}></Route>
         <Route path="/doctor_registration" element={<DoctorReg user={user} />}></Route>
         <Route path="/doctor_update" element={<DoctorUpdate user={user} />}></Route>
