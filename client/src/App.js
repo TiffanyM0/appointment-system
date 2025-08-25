@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from './components/Home';
+import Contact from './components/Contact'
+import Navigation from "./components/nav";
+import About from "./components/About";
 import DoctorLogin from './components/DoctorLogin';
 import AdminLogin from './components/AdminLogin';
 import PatientLogin from './components/PatientLogin';
@@ -15,7 +18,6 @@ import Admin from './components/Admin'
 import RegisteredPatients from './components/RegisteredPatients'
 import RegisteredDoctors from './components/RegisteredDoctors'
 import Appointments from './components/AdminApppoint'
-import Navigation from "./components/nav";
 import './App.css'
 import UserProvider from './components/UserProvider';
 import { useUser } from './components/UserProvider';
@@ -64,6 +66,8 @@ function AppContent() {
       <Navigation /> 
       <Routes>
         <Route path='/' element={<Home user={user} />}></Route>
+        <Route path='contact' element={<Contact user={user} />} ></Route>
+        <Route path='about' element={<About user={user} />} ></Route>
         <Route path='doctor_login'
           element={<DoctorLogin
             handleSubmit={(e) => handleSubmit(e, 2)}
@@ -96,8 +100,7 @@ function AppContent() {
         <Route path="/Appointments" element={<Appointment user={user} />} />
         <Route path="/RegisteredPatients" element={<RegisteredPatients user={user} />} />
         <Route path="admin" element={<Admin user={user} />} />
-        <></>
-      </Routes>
+        </Routes>
     </>
   );
 }

@@ -31,6 +31,12 @@ function Navigation() {
           <Link to="/admin_login" className="nav-link hover:text-blue-500">
             Admin Login
           </Link>
+          <Link to="/about" className="nav-link hover:text-blue-500">
+            About
+          </Link>
+          <Link to="/contact" className="nav-link hover:text-blue-500">
+            Contact
+          </Link>
         </div>
 
         {/* Mobile Button */}
