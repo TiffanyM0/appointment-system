@@ -29,7 +29,7 @@ class Home extends Component {
                                     </div>
                                 </div>
 
-                                <div class="relative">
+                                {/* <div class="relative">
                                     <div class="absolute -bottom-6 -left-6 bg-white rounded-lg p-4 shadow-lg">
                                         <div class="flex items-center space-x-2">
                                             <i class="fas fa-star text-yellow-400"></i>
@@ -37,7 +37,7 @@ class Home extends Component {
                                             <span class="text-gray-600">from 200+ reviews</span>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

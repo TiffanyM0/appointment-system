@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class About extends Component {
     render() {
         return (
-             <div class="items-center h-screen bg-gradient-to-br from-blue-50 to-green-50 py-16">
+             <div class="items-center bg-gradient-to-br from-green-100 to-green-300 h-screen  py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-16">
                         <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">About AfyaLink</h1>

@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 class Contact extends Component {
     render() {
         return (
-            <div class="flex justify-center items-center h-screen">
-                <div class="bg-gradient-to-br from-blue-50 to-green-50 py-16">
+            <div class="flex justify-center items-center bg-gradient-to-br from-green-100 to-green-300">
+                <div class=" py-16">
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="text-center mb-16">
                             <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">Contact Us</h1>
