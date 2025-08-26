@@ -26,10 +26,13 @@ function Navigation() {
             For Therapists
           </Link>
           <Link to="/patient_login" className="nav-link hover:text-blue-500">
-            For Patient
+            For Clients
           </Link>
           <Link to="/admin_login" className="nav-link hover:text-blue-500">
             For Admin
+          </Link>
+          <Link to="/business" className="nav-link hover:text-blue-500">
+            For Partners
           </Link>
           <Link to="/about" className="nav-link hover:text-blue-500">
             About
@@ -56,13 +59,13 @@ function Navigation() {
             Home
           </Link>
           <Link to="/doctor_login" className="nav-link block" onClick={closeMenu}>
-            Doctor Login
+            For Therapists
           </Link>
           <Link to="/patient_login" className="nav-link block" onClick={closeMenu}>
-            Patient Login
+            For Clients
           </Link>
           <Link to="/admin_login" className="nav-link block" onClick={closeMenu}>
-            Admin Login
+            For Admin
           </Link>
         </div>
       )}
