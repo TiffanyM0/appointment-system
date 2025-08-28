@@ -12,6 +12,10 @@ function BookAppointments() {
   // Extra UI-only state (NOT sent to your current API)
   const [selectedTime, setSelectedTime] = useState("");
   const [specialRequests, setSpecialRequests] = useState("");
+  
+  // New state for calendar navigation
+  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
   // ---- ORIGINAL FUNCTIONS (kept) ----
   const create_appointment = async () => {
@@ -59,13 +63,38 @@ function BookAppointments() {
     window.location.href = "http://localhost:3000/patientview";
   };
 
+  // Calendar navigation functions
+  const goToPreviousMonth = () => {
+    if (currentMonth === 0) {
+      setCurrentMonth(11);
+      setCurrentYear(currentYear - 1);
+    } else {
+      setCurrentMonth(currentMonth - 1);
+    }
+  };
+
+  const goToNextMonth = () => {
+    if (currentMonth === 11) {
+      setCurrentMonth(0);
+      setCurrentYear(currentYear + 1);
+    } else {
+      setCurrentMonth(currentMonth + 1);
+    }
+  };
+
+  // Check if we can go to previous month (don't allow past months from today)
+  const canGoPrevious = () => {
+    const today = new Date();
+    const currentDisplayMonth = new Date(currentYear, currentMonth, 1);
+    const currentRealMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+    return currentDisplayMonth > currentRealMonth;
+  };
+
   const today = useMemo(() => {
     const d = new Date();
     d.setHours(0, 0, 0, 0);
     return d;
   }, []);
-  const currentMonth = today.getMonth();
-  const currentYear = today.getFullYear();
 
   const monthNames = [
     "January","February","March","April","May","June",
@@ -151,10 +180,36 @@ function BookAppointments() {
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-4">Select Date *</label>
               <div className="bg-gray-50 rounded-lg p-6">
-                <div className="text-center mb-4">
+                {/* Calendar Header with Navigation */}
+                <div className="flex items-center justify-between mb-4">
+                  <button
+                    type="button"
+                    onClick={goToPreviousMonth}
+                    disabled={!canGoPrevious()}
+                    className={`p-2 rounded-lg transition-colors duration-300 ${
+                      canGoPrevious()
+                        ? "hover:bg-gray-200 text-gray-700"
+                        : "text-gray-400 cursor-not-allowed"
+                    }`}
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  
                   <h3 className="text-xl font-bold text-gray-900">
                     {monthNames[currentMonth]} {currentYear}
                   </h3>
+                  
+                  <button
+                    type="button"
+                    onClick={goToNextMonth}
+                    className="p-2 rounded-lg hover:bg-gray-200 text-gray-700 transition-colors duration-300"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
                 </div>
 
                 {/* Weekdays */}

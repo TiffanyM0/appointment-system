@@ -18,6 +18,8 @@ import Admin from './components/Admin'
 import RegisteredPatients from './components/RegisteredPatients'
 import RegisteredDoctors from './components/RegisteredDoctors'
 import Appointments from './components/AdminApppoint'
+import ArticleGrid from './components/Articles';
+import Payment from './components/PaymentForm';
 import './App.css'
 import UserProvider from './components/UserProvider';
 import { useUser } from './components/UserProvider';
@@ -69,6 +71,7 @@ function AppContent() {
         <Route path='/' element={<Home user={user} />}></Route>
         <Route path='contact' element={<Contact user={user} />} ></Route>
         <Route path='about' element={<About user={user} />} ></Route>
+        <Route path="/articles" element={<ArticleGrid user={user} />}></Route>"
         <Route path='doctor_login'
           element={<DoctorLogin
             handleSubmit={(e) => handleSubmit(e, 2)}
@@ -91,7 +94,7 @@ function AppContent() {
           />}>
         </Route>
         <Route path='register_patient' element={<RegisterPatient user={user} />}></Route>
-        <Route path="prediagnosis" element={<PreDiagnosis user={user} />}></Route>
+        <Route path="/prediagnosis" element={<PreDiagnosis user={user} />}></Route>
         <Route path="/doctor_view" element={<DoctorView user={user} />}></Route>
         <Route path="/doctor_registration" element={<DoctorReg user={user} />}></Route>
         <Route path="/doctor_update" element={<DoctorUpdate user={user} />}></Route>
@@ -102,6 +105,7 @@ function AppContent() {
         <Route path="/Appointments" element={<Appointment user={user} />} />
         <Route path="/RegisteredPatients" element={<RegisteredPatients user={user} />} />
         <Route path="admin" element={<Admin user={user} />} />
+        <Route path="payment" element={<Payment user={user} />} />
         </Routes>
     </>
   );

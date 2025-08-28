@@ -10,7 +10,7 @@ function Navigation() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="bg-white shadow-md fixed w-full z-50">
+    <nav className="bg-white w-full">
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
         {/* Logo / Title */}
         <Link to="/" className="text-xl font-bold text-blue-600">
@@ -22,20 +22,26 @@ function Navigation() {
           <Link to="/" className="nav-link hover:text-blue-500">
             Home
           </Link>
-          <Link to="/doctor_login" className="nav-link hover:text-blue-500">
-            For Therapists
-          </Link>
-          <Link to="/patient_login" className="nav-link hover:text-blue-500">
-            For Clients
-          </Link>
-          <Link to="/admin_login" className="nav-link hover:text-blue-500">
-            For Admin
-          </Link>
-          <Link to="/business" className="nav-link hover:text-blue-500">
-            For Partners
-          </Link>
           <Link to="/about" className="nav-link hover:text-blue-500">
             About
+          </Link>
+          <Link to="/prediagnosis" className="nav-link hover:text-blue-500">
+            Pre-Diagnosis
+          </Link>
+          <Link to="/articles" className="nav-link hover:text-blue-500">
+            Articles
+          </Link>
+          <Link to="/doctor_login" className="nav-link hover:text-blue-500">
+            Therapists
+          </Link>
+          <Link to="/patient_login" className="nav-link hover:text-blue-500">
+            Clients
+          </Link>
+          <Link to="/admin_login" className="nav-link hover:text-blue-500">
+            Admin
+          </Link>
+          <Link to="/business" className="nav-link hover:text-blue-500">
+            Partners
           </Link>
           <Link to="/contact" className="nav-link hover:text-blue-500">
             Contact
