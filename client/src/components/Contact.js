@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class Contact extends Component {
     render() {
         return (
-            <div class="flex justify-center items-center bg-gradient-to-br from-green-100 to-green-300">
+            <div class="flex justify-center items-center bg-gradient-to-br from-blue-100 to-green-100">
                 <div class=" py-16">
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="text-center mb-16">
