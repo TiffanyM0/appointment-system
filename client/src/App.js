@@ -69,31 +69,31 @@ function AppContent() {
       <Navigation /> 
       <Routes>
         <Route path='/' element={<Home user={user} />}></Route>
-        <Route path='contact' element={<Contact user={user} />} ></Route>
-        <Route path='about' element={<About user={user} />} ></Route>
+        <Route path='/contact' element={<Contact user={user} />} ></Route>
+        <Route path='/about' element={<About user={user} />} ></Route>
         <Route path="/articles" element={<ArticleGrid user={user} />}></Route>"
-        <Route path='doctor_login'
+        <Route path='/doctor_login'
           element={<DoctorLogin
             handleSubmit={(e) => handleSubmit(e, 2)}
             log_in={Log_in}
             user={user}
           />}>
         </Route>
-        <Route path='patient_login' 
+        <Route path='/patient_login' 
           element={<PatientLogin 
             handleSubmit={(e) => handleSubmit(e, 1)} 
             log_in={Log_in} 
             user={user}
           />}>
         </Route>
-        <Route path='admin_login' 
+        <Route path='/admin_login' 
           element={<AdminLogin 
             handleSubmit={(e) => handleSubmit(e, 3)} 
             log_in={Log_in}
             user={user}
           />}>
         </Route>
-        <Route path='register_patient' element={<RegisterPatient user={user} />}></Route>
+        <Route path='/register_patient' element={<RegisterPatient user={user} />}></Route>
         <Route path="/prediagnosis" element={<PreDiagnosis user={user} />}></Route>
         <Route path="/doctor_view" element={<DoctorView user={user} />}></Route>
         <Route path="/doctor_registration" element={<DoctorReg user={user} />}></Route>
@@ -104,8 +104,8 @@ function AppContent() {
         <Route path="/RegisteredDoctors" element={<RegisteredDoctors user={user} />} />
         <Route path="/Appointments" element={<Appointment user={user} />} />
         <Route path="/RegisteredPatients" element={<RegisteredPatients user={user} />} />
-        <Route path="admin" element={<Admin user={user} />} />
-        <Route path="payment" element={<Payment user={user} />} />
+        <Route path="/admin" element={<Admin user={user} />} />
+        <Route path="/payment" element={<Payment user={user} />} />
         </Routes>
     </>
   );
